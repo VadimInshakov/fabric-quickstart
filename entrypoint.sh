@@ -1,2 +1,4 @@
 #!/bin/bash
-cd fabric-samples/fabcar/ && startFabric.sh
+./startDocker.sh
+./installFabric.sh
+cd /home/user/fabric-samples/basic-network/ && ./generate.sh && ./init.sh && ./start.sh

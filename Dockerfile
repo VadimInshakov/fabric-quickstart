@@ -45,7 +45,8 @@ RUN apt-get update && \
 
 USER user:docker
 WORKDIR /home/user
-COPY entrypoint.sh .
+COPY ./crypto-config .
+COPY ./entrypoint.sh .
 
 #node v6
 #RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo bash - && \
@@ -80,4 +81,4 @@ EXPOSE 3001
 
 CMD sudo service docker start && /bin/bash
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/home/user/entrypoint.sh"]
